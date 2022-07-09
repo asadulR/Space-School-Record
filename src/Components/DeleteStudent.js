@@ -27,7 +27,7 @@ const DeleteStudent = ({deletingStudent, refetch}) => {
                     <h3 className="font-bold text-accent text-lg">Delete Student </h3>
                     <div className="divider"></div>
                     <p className=" text-black font-semibold mb-4">Are you sure you want to remove the current student from the list?</p>
-                    <form onClick={() => handleDelete(deletingStudent?._id)}>
+                    <form onSubmit={() => handleDelete(deletingStudent?._id)}>
                         <div className="form-control">
                             <span htmlFor="name" className=" text-sm text-gray-600">STUDENT NAME</span>
                             <p className='mb-3'>{deletingStudent?.name}</p>

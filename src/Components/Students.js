@@ -6,15 +6,36 @@ import EditStudents from './EditStudents';
 import { useQuery } from 'react-query';
 import Loading from './Loading/Loading';
 import DeleteStudent from './DeleteStudent';
+import toast, { Toaster } from 'react-hot-toast';
+
 const Students = () => {
     const [editingData, setEditingData] = useState({});
-    const [deletingStudent, setDeletingStudent] = useState({});
     const { isLoading, error, data, refetch } = useQuery('available', () =>
         fetch(`https://space-school-record.herokuapp.com/students`).then(res =>
             res.json()
         )
     )
     if (isLoading) return <Loading />
+
+
+    const handleDelete = (_id) => {
+        const proceed = window.confirm("Are you sure you want to remove the student from the list?")
+        const deleteUrl = `https://space-school-record.herokuapp.com/delete-student/${_id}`;
+        // console.log(myItemDeleteUrl)
+       if(proceed){
+        fetch(deleteUrl, {
+            method: 'DELETE',
+        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success('Student Deleted');
+                refetch();
+            })
+       }else{
+
+       }
+
+    }
     return (
         <section>
             <div className="drawer drawer-mobile">
@@ -50,7 +71,7 @@ const Students = () => {
                                     <tr className="hover">
                                         <th>{index + 1}</th>
                                         <td>{student.name}</td>
-                                        <td>{student.class}</td>
+                                        <td>{student.class}th</td>
                                         <td className=' text-base-100'><span className={(student.result === "Passed" ? 'bg-success px-2 rounded-3xl' : 'bg-warning px-2 rounded-3xl')}>{student.result}</span></td>
                                         <td>{student.score}/100</td>
                                         <td><span className={` ${student.grade === "Excellent" && "text-success"} ${student.grade === "Average" && "text-primary"} ${student.grade === "Poor" && "text-warning"}`}>{student.grade}</span></td>
@@ -59,7 +80,7 @@ const Students = () => {
                                                 htmlFor="editing-modal"><FaPencilAlt className=' hover:text-success cursor-pointer' />
                                             </label>
 
-                                            <label onClick={() => setDeletingStudent(student)}
+                                            <label onClick={() => handleDelete(student._id)}
                                                 htmlFor="deleting-modal"><FaTrashAlt className='hover:text-warning cursor-pointer' />
                                             </label>
                                             {/* <FaTrashAlt className='hover:text-warning cursor-pointer' /> */}
@@ -126,10 +147,10 @@ const Students = () => {
                     </div>
                 </div>
             </div>
-
+            {/* <Toaster/> */}
             <AddStudent refetch={refetch} />
             <EditStudents editingData={editingData} refetch={refetch}/>
-            <DeleteStudent refetch={refetch} deletingStudent={deletingStudent} />
+            {/* <DeleteStudent refetch={refetch} deletingStudent={deletingStudent} /> */}
         </section>
     );
 };
