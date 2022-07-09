@@ -22,9 +22,9 @@ const Students = () => {
                 <div className="drawer-content my-4 px-6">
                     {/* <!-- Page content here --> */}
                     <div className='flex justify-end'><label htmlFor="my-drawer-2" className=' drawer-button text-right text-primary lg:hidden text-xl cursor-pointer'><FaAlignRight /></label></div>
-                    <div className='flex items-center justify-between mt-10 mb-6'>
+                    <div className='flex items-center justify-between mt-6 mb-6'>
                         <div>
-                            <h2 className='text-accent' style={{ fontSize: "20px", fontWeight: "700" }}>Students</h2>
+                            <h2 className='text-accent' style={{ fontSize: "20px", fontWeight: "700" }}>Students Record</h2>
                         </div>
                         <div>
                             <label htmlFor="student-modal" className='btn bg-primary hover:bg-secondary font-semibold text-white' style={{ fontSize: "14px", padding: "8px 32px", lineHeight: "26px" }}><FaPlus className='mr-2' /> ADD</label>
@@ -76,16 +76,12 @@ const Students = () => {
                     <label for="my-drawer-2" className="drawer-overlay"></label>
                     <div className="menu p-6 overflow-y-auto w-80 bg-base-100 text-base-content border-r border-slate-300 shad">
                         {/* <!-- Sidebar content here --> */}
-                        <div className=' flex items-center gap-2' style={{ margin: "30px 0 30px 0" }}>
+                        <div className=' flex items-center gap-2' style={{ margin: "20px 0 30px 0" }}>
                             <span className='px-4 py-3  rounded-md inline-block bg-secondary'><FaAward className=' text-xl' /></span>
-                            <span className='text-primary' style={{ fontSize: "30px", fontWeight: "800", lineHeight: "40px" }}>School Space</span>
+                            <span className='text-primary' style={{ fontSize: "30px", fontWeight: "800", lineHeight: "40px" }}>Space School</span>
                         </div>
                         <div className="divider"></div>
 
-                        <div className='flex items-center p-2 rounded-md hover:bg-sky-100'>
-                            <span className='mr-4 text-lg'><FaBuromobelexperte className=' text-gray-400' /></span>
-                            <span style={{ fontSize: "14px" }}>Dashboard</span>
-                        </div>
                         <div className='flex items-center rounded-md p-2 hover:bg-sky-100'>
                             <span className='mr-4 text-lg'><FaBookOpen className=' text-gray-400' /></span>
                             <span style={{ fontSize: "14px" }}>Courses</span>

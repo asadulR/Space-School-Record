@@ -110,15 +110,6 @@ const AddStudent = ({ refetch }) => {
                             </label>
                         </div>
 
-                        <div className='form-control'>
-                            <span className="label-text text-left">RESULT</span>
-                            <span>-</span>
-
-                            <span className="label-text text-left">GRADE</span>
-                            <span>-</span>
-
-                        </div>
-
                         <div className="mt-6 text-end">
                             <label htmlFor="student-modal" className='btn border-primary text-primary mr-4 btn-sm'>CANCEL</label>
                             <input className='btn btn-primary text-base-100 btn-sm' type="submit" value='CONFIRM' />
