@@ -5,7 +5,6 @@ import AddStudent from './AddStudent';
 import EditStudents from './EditStudents';
 import { useQuery } from 'react-query';
 import Loading from './Loading/Loading';
-import DeleteStudent from './DeleteStudent';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Students = () => {
@@ -150,7 +149,6 @@ const Students = () => {
             {/* <Toaster/> */}
             <AddStudent refetch={refetch} />
             <EditStudents editingData={editingData} refetch={refetch}/>
-            {/* <DeleteStudent refetch={refetch} deletingStudent={deletingStudent} /> */}
         </section>
     );
 };
