@@ -21,7 +21,7 @@ const AddStudent = ({ refetch }) => {
 
         }
         console.log(data)
-        fetch('https://student-space1.herokuapp.com/add-student', {
+        fetch('https://space-school-record.herokuapp.com/add-student', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

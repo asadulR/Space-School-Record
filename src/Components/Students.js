@@ -10,7 +10,7 @@ const Students = () => {
     const [editingData, setEditingData] = useState({});
     const [deletingStudent, setDeletingStudent] = useState({});
     const { isLoading, error, data, refetch } = useQuery('available', () =>
-        fetch(`https://student-space1.herokuapp.com/students`).then(res =>
+        fetch(`https://space-school-record.herokuapp.com/students`).then(res =>
             res.json()
         )
     )

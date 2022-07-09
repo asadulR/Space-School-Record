@@ -22,7 +22,7 @@ const EditStudents = ({ editingData, refetch }) => {
 
         }
         //    put api to update student records
-        const url = `https://student-space1.herokuapp.com/update-record/${editingData?._id}`
+        const url = `https://space-school-record.herokuapp.com/update-record/${editingData?._id}`
         fetch(url, {
             method: 'PUT',
             headers: {

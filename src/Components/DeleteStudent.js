@@ -6,7 +6,7 @@ const DeleteStudent = ({deletingStudent, refetch}) => {
     // console.log(editingData)
     const handleDelete = (_id) => {
 
-        const deleteUrl = `http://localhost:4000/delete-student/${_id}`;
+        const deleteUrl = `https://space-school-record.herokuapp.com/delete-student/${_id}`;
         // console.log(myItemDeleteUrl)
         fetch(deleteUrl, {
             method: 'DELETE',
@@ -14,7 +14,7 @@ const DeleteStudent = ({deletingStudent, refetch}) => {
             .then(res => res.json())
             .then(data => {
                 toast.success('Student Deleted');
-                // refetch();
+                refetch();
             })
 
     }
