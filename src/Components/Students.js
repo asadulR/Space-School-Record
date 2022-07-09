@@ -56,7 +56,7 @@ const Students = () => {
                         <table className="table w-full">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
+                                    <th>Avatar</th>
                                     <th>Student Name</th>
                                     <th>Class</th>
                                     <th>Result</th>
@@ -66,15 +66,15 @@ const Students = () => {
                                 </tr>
                             </thead>
                             {
-                                data?.map((student, index) => <tbody key={student.key} index={student.index}>
+                                data?.map((student) => <tbody key={student.key}>
                                     <tr className="hover">
-                                        <th>{index + 1}</th>
+                                        <th><img className=" w-8 h-8 rounded-xl" src={student.img} alt="" /></th>
                                         <td>{student.name}</td>
                                         <td>{student.class}th</td>
                                         <td className=' text-base-100'><span className={(student.result === "Passed" ? 'bg-success px-2 rounded-3xl' : 'bg-warning px-2 rounded-3xl')}>{student.result}</span></td>
                                         <td>{student.score}/100</td>
                                         <td><span className={` ${student.grade === "Excellent" && "text-success"} ${student.grade === "Average" && "text-primary"} ${student.grade === "Poor" && "text-warning"}`}>{student.grade}</span></td>
-                                        <td className='flex gap-3 p-5 text-primary'>
+                                        <td className='flex gap-3 p-8 text-primary'>
                                             <label onClick={() => setEditingData(student)}
                                                 htmlFor="editing-modal"><FaPencilAlt className=' hover:text-success cursor-pointer' />
                                             </label>

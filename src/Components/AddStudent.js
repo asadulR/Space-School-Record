@@ -109,6 +109,20 @@ const AddStudent = ({ refetch }) => {
                                 {errors.score?.type === 'max' && <span className="label-text-alt text-red-700">{errors.score.message}</span>}
                             </label>
                         </div>
+                        <div className="form-control">
+                            <span htmlFor="img" className="label-text mb-1">IMAGE URL*</span>
+                            <input type="text" name='img' className="input input-bordered input-sm"
+                                {...register("img", {
+                                    required: {
+                                        value: true,
+                                        message: "Image URL is Required"
+                                    }
+                                })}
+                            />
+                            <label className="label">
+                                {errors.img?.type === 'required' && <span className="label-text-alt text-red-700">{errors.img.message}</span>}
+                            </label>
+                        </div>
 
                         <div className="mt-6 text-end">
                             <label htmlFor="student-modal" className='btn border-primary text-primary mr-4 btn-sm'>CANCEL</label>
